@@ -157,6 +157,8 @@ namespace Arkanoid.Gameplay
             }
         }
 
+        public bool IsPierceMode => isPierceMode;
+
         public void SetPierceMode(bool active)
         {
             isPierceMode = active;
@@ -229,6 +231,7 @@ namespace Arkanoid.Gameplay
                 {
                     // Ignore collision physically so the ball can pass through
                     Physics2D.IgnoreCollision(collision.collider, collision.otherCollider, true);
+                    StartCoroutine(RestoreCollisionRoutine(collision.collider, collision.otherCollider));
                     
                     brick.Hit(1); // Fireball deals damage
 
@@ -321,6 +324,18 @@ namespace Arkanoid.Gameplay
             if (other.name == "DeathZone")
             {
                 GameManager.Instance.RemoveBall(this);
+            }
+        }
+
+        private System.Collections.IEnumerator RestoreCollisionRoutine(Collider2D brickCollider, Collider2D ballCollider)
+        {
+            // Wait 0.25 seconds to allow the ball to completely pass through the brick
+            yield return new WaitForSeconds(0.25f);
+
+            // Restore collision if both still exist
+            if (brickCollider != null && ballCollider != null)
+            {
+                Physics2D.IgnoreCollision(brickCollider, ballCollider, false);
             }
         }
     }

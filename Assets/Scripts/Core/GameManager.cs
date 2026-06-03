@@ -439,6 +439,7 @@ namespace Arkanoid.Core
                     ).normalized * baseVel.magnitude;
                     
                     ballCopy.Launch(newVel);
+                    ballCopy.SetPierceMode(b.IsPierceMode);
                     activeBalls.Add(ballCopy);
                 }
             }
