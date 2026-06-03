@@ -216,6 +216,7 @@ namespace Arkanoid.Gameplay
             {
                 ball.SetOnPaddle(this);
                 caughtBalls.Add(ball);
+                if (SoundManager.Instance != null) SoundManager.Instance.PlayCatch();
             }
         }
 
@@ -229,6 +230,11 @@ namespace Arkanoid.Gameplay
             // Capture a copy to avoid modification during loop
             List<BallController> temp = new List<BallController>(caughtBalls);
             caughtBalls.Clear();
+
+            if (temp.Count > 0 && SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlayLaunch();
+            }
 
             foreach (var ball in temp)
             {

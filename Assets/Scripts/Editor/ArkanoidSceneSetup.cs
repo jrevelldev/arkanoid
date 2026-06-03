@@ -36,6 +36,10 @@ namespace Arkanoid.Editor
                 camObj = new GameObject("Main Camera");
                 camObj.AddComponent<Camera>();
             }
+            if (camObj.GetComponent<AudioListener>() == null)
+            {
+                camObj.AddComponent<AudioListener>();
+            }
             Camera camera = camObj.GetComponent<Camera>();
             camera.clearFlags = CameraClearFlags.SolidColor;
             camera.backgroundColor = new Color(0.035f, 0.02f, 0.07f, 1f); // Deep Space Dark Violet

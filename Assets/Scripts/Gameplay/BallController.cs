@@ -135,6 +135,7 @@ namespace Arkanoid.Gameplay
             // Launch slightly angled upwards
             Vector2 launchDir = new Vector2(Random.Range(-0.2f, 0.2f), 1f).normalized;
             Launch(launchDir * currentSpeed);
+            if (SoundManager.Instance != null) SoundManager.Instance.PlayLaunch();
         }
 
         public void Launch(Vector2 velocity)

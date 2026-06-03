@@ -50,7 +50,7 @@ During gameplay, hold the **`C`** key and press one of the following keys to tri
 
 ## 🌟 Key Features & Tech Stack
 
-* **Procedural Synth Audio**: Sound effects (bounces, hits, powerups, lasers, deaths, wins) are mathematically synthesized on-the-fly in C# using wave formulas (sine, square, frequency sweeps). **No external audio files required!**
+* **Procedural Synth Audio**: Sound effects (bounces, hits, powerups, lasers, deaths, wins, ball launch, catching balls, power-up spawns, UI navigation, and UI selection) are mathematically synthesized on-the-fly in C# using wave formulas (sine, square, frequency sweeps). **No external audio files required!**
 * **Neon Grid Background**: Draws a scrolling futuristic vector highway using direct GL rendering, adding depth without loading bulky image assets.
 * **Vector Aesthetic & Juice**: 
   * Glow trails behind balls (`TrailRenderer`).
@@ -157,6 +157,16 @@ The level layout is a grid of **12 columns**. Use the following character mappin
 ---
 
 ## 🏷️ Release History
+
+### 🟡 `v1.1.0` — Audio Listener Safeguard & Tactile Audio Expansion (June 3, 2026)
+This release resolves the missing `AudioListener` issue and introduces five new retro-synth sound effects to make gameplay and UI navigation feel significantly more tactile.
+
+#### ⚙️ Feature Summary
+* **AudioListener Safeguard**: Integrated automatic `AudioListener` assignment to the Main Camera during scene setup (`ArkanoidSceneSetup.cs`) and added a runtime fallback check in `SoundManager.cs` to guarantee that exactly one listener is always present.
+* **Launch Sound Effect**: Added a synthetic upward-sweeping pitch envelope played whenever the ball is launched from the paddle.
+* **Catch Sound Effect**: Added a synthetic descending pitch drop played when balls stick to the paddle under the Catch power-up.
+* **Power-up Drop Sound Effect**: Added a retro note-cascade arpeggio played when a brick drops a power-up capsule.
+* **Tactile UI Sound Effects**: Added a clicky focus sound for button selection highlights and a double-chirp tone when confirming menu selections, dynamically bound to all UI buttons.
 
 ### 🟢 `v1.0.0` — Initial Base Release (June 3, 2026)
 This release establishes the core game loop, developer cheats, procedural audio synth engine, neon graphics pipeline, and keyboard menu navigation.

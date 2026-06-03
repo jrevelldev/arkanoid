@@ -52,6 +52,28 @@ namespace Arkanoid.UI
             if (victoryPlayAgainButton != null) victoryPlayAgainButton.onClick.AddListener(OnPlayPressed);
             if (exitButton != null) exitButton.onClick.AddListener(OnExitPressed);
             if (mainMenuButton != null) mainMenuButton.onClick.AddListener(OnMainMenuPressed);
+
+            // Register UI click sounds to all buttons in all panels
+            RegisterConfirmSound(mainMenuPanel);
+            RegisterConfirmSound(pausePanel);
+            RegisterConfirmSound(gameOverPanel);
+            RegisterConfirmSound(levelCompletePanel);
+            RegisterConfirmSound(victoryPanel);
+        }
+
+        private void RegisterConfirmSound(GameObject panel)
+        {
+            if (panel == null) return;
+            Button[] buttons = panel.GetComponentsInChildren<Button>(true);
+            foreach (Button btn in buttons)
+            {
+                btn.onClick.AddListener(PlayConfirm);
+            }
+        }
+
+        private void PlayConfirm()
+        {
+            if (SoundManager.Instance != null) SoundManager.Instance.PlayUIConfirm();
         }
 
         private void Update()
@@ -94,6 +116,7 @@ namespace Arkanoid.UI
                             lastTextComponent = txt;
                             lastOriginalText = txt.text;
                             txt.text = "> " + lastOriginalText + " <";
+                            if (SoundManager.Instance != null) SoundManager.Instance.PlayUISelect();
                         }
                     }
                 }

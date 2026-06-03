@@ -165,6 +165,8 @@ namespace Arkanoid.Gameplay
                 string[] types = { "Expand", "Laser", "Catch", "Triple", "Slow", "Pierce", "Life" };
                 string randomType = types[Random.Range(0, types.Length)];
 
+                if (SoundManager.Instance != null) SoundManager.Instance.PlayPowerUpDrop();
+
                 if (powerUpPrefab != null)
                 {
                     PowerUp powerup = Instantiate(powerUpPrefab, transform.position, Quaternion.identity);

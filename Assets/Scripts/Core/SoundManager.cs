@@ -16,6 +16,11 @@ namespace Arkanoid.Core
         private AudioClip deathClip;
         private AudioClip winClip;
         private AudioClip lossClip;
+        private AudioClip launchClip;
+        private AudioClip catchClip;
+        private AudioClip powerUpDropClip;
+        private AudioClip uiSelectClip;
+        private AudioClip uiConfirmClip;
 
         private void Awake()
         {
@@ -28,10 +33,30 @@ namespace Arkanoid.Core
                 audioSource.playOnAwake = false;
                 audioSource.spatialBlend = 0.0f; // 2D sound
                 GenerateAudioClips();
+                EnsureAudioListener();
             }
             else
             {
                 Destroy(gameObject);
+            }
+        }
+
+        private void EnsureAudioListener()
+        {
+            AudioListener listener = FindObjectOfType<AudioListener>();
+            if (listener == null)
+            {
+                Camera mainCam = Camera.main;
+                if (mainCam != null)
+                {
+                    mainCam.gameObject.AddComponent<AudioListener>();
+                    Debug.Log("SoundManager: Added AudioListener to Main Camera at runtime.");
+                }
+                else
+                {
+                    gameObject.AddComponent<AudioListener>();
+                    Debug.Log("SoundManager: No Main Camera found, added AudioListener to SoundManager at runtime.");
+                }
             }
         }
 
@@ -92,6 +117,36 @@ namespace Arkanoid.Core
                 float noise = Random.Range(-1f, 1f) * 0.15f;
                 return (Mathf.Sin(2f * Mathf.PI * freq * t) + noise) * (1f - t / d) * 0.5f;
             });
+
+            launchClip = CreateTone(0.15f, (t, d) => {
+                float freq = Mathf.Lerp(400f, 900f, t / d);
+                return Mathf.Sin(2f * Mathf.PI * freq * t) * (1f - t / d) * 0.4f;
+            });
+
+            catchClip = CreateTone(0.12f, (t, d) => {
+                float freq = Mathf.Lerp(600f, 250f, t / d);
+                return Mathf.Sin(2f * Mathf.PI * freq * t) * (1f - t / d) * 0.4f;
+            });
+
+            powerUpDropClip = CreateTone(0.25f, (t, d) => {
+                float phase = t / d;
+                float freq = 300f;
+                if (phase > 0.66f) freq = 500f;
+                else if (phase > 0.33f) freq = 400f;
+                return Mathf.Sin(2f * Mathf.PI * freq * t) * (1f - t / d) * 0.3f;
+            });
+
+            uiSelectClip = CreateTone(0.04f, (t, d) => {
+                float freq = 800f;
+                float wave = Mathf.Sign(Mathf.Sin(2f * Mathf.PI * freq * t));
+                return wave * (1f - t / d) * 0.15f;
+            });
+
+            uiConfirmClip = CreateTone(0.12f, (t, d) => {
+                float phase = t / d;
+                float freq = phase > 0.5f ? 1200f : 1000f;
+                return Mathf.Sin(2f * Mathf.PI * freq * t) * (1f - t / d) * 0.3f;
+            });
         }
 
         private AudioClip CreateTone(float duration, System.Func<float, float, float> waveFunc)
@@ -119,5 +174,10 @@ namespace Arkanoid.Core
         public void PlayDeath() => audioSource.PlayOneShot(deathClip);
         public void PlayWin() => audioSource.PlayOneShot(winClip);
         public void PlayLoss() => audioSource.PlayOneShot(lossClip);
+        public void PlayLaunch() => audioSource.PlayOneShot(launchClip);
+        public void PlayCatch() => audioSource.PlayOneShot(catchClip);
+        public void PlayPowerUpDrop() => audioSource.PlayOneShot(powerUpDropClip);
+        public void PlayUISelect() => audioSource.PlayOneShot(uiSelectClip);
+        public void PlayUIConfirm() => audioSource.PlayOneShot(uiConfirmClip);
     }
 }
