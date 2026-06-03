@@ -23,6 +23,7 @@ To play the game:
   * Launch the ball from the paddle at start-of-life or when caught.
   * Fire laser beams when the **Laser (L)** power-up is active.
 * **Pause / Unpause**: Press **Escape** or **P** at any time to toggle the pause menu.
+* **Menu Navigation**: Press the **Up/Down Arrow Keys** to highlight buttons, and press **Enter** or **Spacebar** to confirm selection.
 
 ---
 

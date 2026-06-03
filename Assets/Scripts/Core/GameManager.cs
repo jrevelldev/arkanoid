@@ -59,10 +59,13 @@ namespace Arkanoid.Core
         private void Start()
         {
             ShowMainMenu();
+            UpdateCursorState();
         }
 
         private void Update()
         {
+            UpdateCursorState();
+
             if (currentState == GameState.Playing)
             {
                 HandleCheats();
@@ -87,6 +90,20 @@ namespace Arkanoid.Core
                         DeactivatePowerUp();
                     }
                 }
+            }
+        }
+
+        private void UpdateCursorState()
+        {
+            if (currentState == GameState.Playing)
+            {
+                if (Cursor.visible) Cursor.visible = false;
+                if (Cursor.lockState != CursorLockMode.Confined) Cursor.lockState = CursorLockMode.Confined;
+            }
+            else
+            {
+                if (!Cursor.visible) Cursor.visible = true;
+                if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
             }
         }
 
