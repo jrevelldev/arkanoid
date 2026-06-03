@@ -269,6 +269,26 @@ namespace Arkanoid.Gameplay
             float normalizedHitPos = relativeHitPos / (paddleWidth / 2f);
             normalizedHitPos = Mathf.Clamp(normalizedHitPos, -1f, 1f);
 
+            // Prevent perfectly vertical bounces by enforcing a minimum horizontal offset.
+            // This avoids the ball getting trapped bouncing straight up and down,
+            // especially when the paddle is at screen boundaries and cannot be moved further.
+            float minOffset = 0.08f;
+            if (Mathf.Abs(normalizedHitPos) < minOffset)
+            {
+                // Nudge it horizontally: preserve incoming direction if it exists,
+                // otherwise push it towards the center of the screen.
+                float nudgeSign = 0f;
+                if (Mathf.Abs(lastFrameVelocity.x) > 0.01f)
+                {
+                    nudgeSign = Mathf.Sign(lastFrameVelocity.x);
+                }
+                else
+                {
+                    nudgeSign = paddle.transform.position.x > 0 ? -1f : 1f;
+                }
+                normalizedHitPos = minOffset * nudgeSign;
+            }
+
             // Calculate new launch angle (e.g. max 60 degrees)
             float maxBounceAngle = 60f * Mathf.Deg2Rad;
             float angle = normalizedHitPos * maxBounceAngle;
