@@ -40,7 +40,7 @@ namespace Arkanoid.UI
         {
             if (scoreText != null)
             {
-                scoreText.text = $"SCORE: {score:D6}";
+                scoreText.text = $"PUNTS: {score:D6}";
             }
         }
 
@@ -48,7 +48,7 @@ namespace Arkanoid.UI
         {
             if (highScoreText != null)
             {
-                highScoreText.text = $"HI-SCORE: {highScore:D6}";
+                highScoreText.text = $"RÈCORD: {highScore:D6}";
             }
         }
 
@@ -62,7 +62,7 @@ namespace Arkanoid.UI
                 {
                     livesDisplay += "▲ ";
                 }
-                livesText.text = $"LIVES: {livesDisplay.Trim()}";
+                livesText.text = $"VIDES: {livesDisplay.Trim()}";
             }
         }
 
@@ -70,7 +70,7 @@ namespace Arkanoid.UI
         {
             if (levelText != null)
             {
-                levelText.text = $"LEVEL: {level}";
+                levelText.text = $"NIVELL: {level}";
             }
         }
 
@@ -79,7 +79,18 @@ namespace Arkanoid.UI
             if (powerUpText != null)
             {
                 powerUpText.gameObject.SetActive(true);
-                powerUpText.text = $"- {type.ToUpper()} ACTIVE -";
+                
+                string catalanName = type.ToUpper();
+                switch (type)
+                {
+                    case "Expand": catalanName = "EXPANSIÓ ACTIVA"; break;
+                    case "Laser": catalanName = "LÀSER ACTIU"; break;
+                    case "Catch": catalanName = "CAPTURA ACTIVA"; break;
+                    case "Slow": catalanName = "ALENTIMENT ACTIU"; break;
+                    case "Pierce": catalanName = "PERFORACIÓ ACTIVA"; break;
+                }
+                
+                powerUpText.text = $"- {catalanName} -";
                 
                 // Color match the powerup
                 Color textColor = Color.white;

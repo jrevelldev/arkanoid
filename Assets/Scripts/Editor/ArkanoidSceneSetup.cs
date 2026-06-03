@@ -254,11 +254,11 @@ namespace Arkanoid.Editor
             Color neonOrange = new Color(1f, 0.6f, 0f);
             Color neonGreen = new Color(0f, 1f, 0.5f);
 
-            hudCtrl.scoreText = CreateText(hudPanel, "ScoreText", "SCORE: 000000", 30, Color.white, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(50f, 0f), new Vector2(400f, 60f), TextAnchor.MiddleLeft);
-            hudCtrl.highScoreText = CreateText(hudPanel, "HighScoreText", "HI-SCORE: 000000", 30, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(450f, 60f), TextAnchor.MiddleCenter);
-            hudCtrl.levelText = CreateText(hudPanel, "LevelText", "LEVEL: 1", 30, neonCyan, new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-400f, 0f), new Vector2(250f, 60f), TextAnchor.MiddleRight);
-            hudCtrl.livesText = CreateText(hudPanel, "LivesText", "LIVES: ▲ ▲ ▲", 30, neonGreen, new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-50f, 0f), new Vector2(300f, 60f), TextAnchor.MiddleRight);
-            hudCtrl.powerUpText = CreateText(canvasObj, "PowerUpText", "- EXPAND ACTIVE -", 32, neonPink, new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 50f), new Vector2(800f, 60f), TextAnchor.MiddleCenter);
+            hudCtrl.scoreText = CreateText(hudPanel, "ScoreText", "PUNTS: 000000", 30, Color.white, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(50f, 0f), new Vector2(400f, 60f), TextAnchor.MiddleLeft);
+            hudCtrl.highScoreText = CreateText(hudPanel, "HighScoreText", "RÈCORD: 000000", 30, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(450f, 60f), TextAnchor.MiddleCenter);
+            hudCtrl.levelText = CreateText(hudPanel, "LevelText", "NIVELL: 1", 30, neonCyan, new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-400f, 0f), new Vector2(250f, 60f), TextAnchor.MiddleRight);
+            hudCtrl.livesText = CreateText(hudPanel, "LivesText", "VIDES: ▲ ▲ ▲", 30, neonGreen, new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-50f, 0f), new Vector2(300f, 60f), TextAnchor.MiddleRight);
+            hudCtrl.powerUpText = CreateText(canvasObj, "PowerUpText", "- EXPANSIÓ ACTIVA -", 32, neonPink, new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 50f), new Vector2(800f, 60f), TextAnchor.MiddleCenter);
             hudCtrl.powerUpText.gameObject.SetActive(false);
 
             // Menu Controller
@@ -279,41 +279,41 @@ namespace Arkanoid.Editor
             GameObject mainMenu = CreateUIPanel("MainMenuPanel", canvasObj.transform, overlayBg);
             menuCtrl.mainMenuPanel = mainMenu;
             CreateText(mainMenu, "TitleText", "NEON FLUX\nARKANOID", 72, neonPink, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 200f), new Vector2(800f, 200f), TextAnchor.MiddleCenter);
-            menuCtrl.mainMenuHighScoreText = CreateText(mainMenu, "HighScore", "HI-SCORE: 000000", 28, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 50f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
-            menuCtrl.playButton = CreateUIButton(mainMenu, "PlayButton", "LAUNCH GAME", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -80f), new Vector2(280f, 65f), neonCyan);
-            menuCtrl.exitButton = CreateUIButton(mainMenu, "ExitButton", "QUIT SYSTEM", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -170f), new Vector2(280f, 65f), neonCyan);
+            menuCtrl.mainMenuHighScoreText = CreateText(mainMenu, "HighScore", "RÈCORD: 000000", 28, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 50f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
+            menuCtrl.playButton = CreateUIButton(mainMenu, "PlayButton", "INICIAR PARTIDA", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -80f), new Vector2(280f, 65f), neonCyan);
+            menuCtrl.exitButton = CreateUIButton(mainMenu, "ExitButton", "SORTIR DEL SISTEMA", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -170f), new Vector2(280f, 65f), neonCyan);
 
             // --- Pause Panel ---
             GameObject pausePanel = CreateUIPanel("PausePanel", canvasObj.transform, new Color(0.03f, 0.01f, 0.06f, 0.8f));
             menuCtrl.pausePanel = pausePanel;
-            CreateText(pausePanel, "TitleText", "SYSTEM PAUSED", 60, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 150f), new Vector2(800f, 100f), TextAnchor.MiddleCenter);
-            menuCtrl.resumeButton = CreateUIButton(pausePanel, "ResumeButton", "RESUME", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(280f, 65f), neonCyan);
-            var pauseMenuBtn = CreateUIButton(pausePanel, "MenuButton", "MAIN MENU", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -90f), new Vector2(280f, 65f), neonCyan);
+            CreateText(pausePanel, "TitleText", "SISTEMA EN PAUSA", 60, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 150f), new Vector2(800f, 100f), TextAnchor.MiddleCenter);
+            menuCtrl.resumeButton = CreateUIButton(pausePanel, "ResumeButton", "REPRENDRE", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(280f, 65f), neonCyan);
+            var pauseMenuBtn = CreateUIButton(pausePanel, "MenuButton", "MENÚ PRINCIPAL", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -90f), new Vector2(280f, 65f), neonCyan);
 
             // --- Game Over Panel ---
             GameObject gameOver = CreateUIPanel("GameOverPanel", canvasObj.transform, overlayBg);
             menuCtrl.gameOverPanel = gameOver;
-            CreateText(gameOver, "TitleText", "GAME OVER", 72, Color.red, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 200f), new Vector2(800f, 120f), TextAnchor.MiddleCenter);
-            menuCtrl.gameOverScoreText = CreateText(gameOver, "ScoreText", "FINAL SCORE: 000000", 30, Color.white, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 80f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
-            menuCtrl.gameOverHighScoreText = CreateText(gameOver, "HighScoreText", "HI-SCORE: 000000", 24, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 30f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
-            menuCtrl.retryButton = CreateUIButton(gameOver, "RetryButton", "RETRY MATRIX", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -80f), new Vector2(280f, 65f), neonCyan);
-            var goMenuBtn = CreateUIButton(gameOver, "MenuButton", "MAIN MENU", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -170f), new Vector2(280f, 65f), neonCyan);
+            CreateText(gameOver, "TitleText", "FI DE PARTIDA", 72, Color.red, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 200f), new Vector2(800f, 120f), TextAnchor.MiddleCenter);
+            menuCtrl.gameOverScoreText = CreateText(gameOver, "ScoreText", "PUNTUACIÓ FINAL: 000000", 30, Color.white, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 80f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
+            menuCtrl.gameOverHighScoreText = CreateText(gameOver, "HighScoreText", "RÈCORD: 000000", 24, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 30f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
+            menuCtrl.retryButton = CreateUIButton(gameOver, "RetryButton", "REINICIAR MATRIU", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -80f), new Vector2(280f, 65f), neonCyan);
+            var goMenuBtn = CreateUIButton(gameOver, "MenuButton", "MENÚ PRINCIPAL", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -170f), new Vector2(280f, 65f), neonCyan);
 
             // --- Level Complete Panel ---
             GameObject levelComplete = CreateUIPanel("LevelCompletePanel", canvasObj.transform, overlayBg);
             menuCtrl.levelCompletePanel = levelComplete;
-            menuCtrl.levelCompleteTitleText = CreateText(levelComplete, "TitleText", "LEVEL 1 COMPLETED", 60, neonGreen, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 150f), new Vector2(800f, 100f), TextAnchor.MiddleCenter);
-            menuCtrl.nextLevelButton = CreateUIButton(levelComplete, "NextLevelButton", "NEXT STAGE", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -10f), new Vector2(280f, 65f), neonCyan);
+            menuCtrl.levelCompleteTitleText = CreateText(levelComplete, "TitleText", "NIVELL 1 SUPERAT", 60, neonGreen, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 150f), new Vector2(800f, 100f), TextAnchor.MiddleCenter);
+            menuCtrl.nextLevelButton = CreateUIButton(levelComplete, "NextLevelButton", "SEGÜENT FASE", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -10f), new Vector2(280f, 65f), neonCyan);
 
             // --- Victory Panel ---
             GameObject victory = CreateUIPanel("VictoryPanel", canvasObj.transform, overlayBg);
             menuCtrl.victoryPanel = victory;
-            CreateText(victory, "TitleText", "VICTORY ACHIEVED", 68, neonGreen, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 210f), new Vector2(800f, 120f), TextAnchor.MiddleCenter);
-            CreateText(victory, "SubtitleText", "ALL MATRIX LEVELS CLEARED", 22, neonCyan, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 140f), new Vector2(800f, 50f), TextAnchor.MiddleCenter);
-            menuCtrl.victoryScoreText = CreateText(victory, "ScoreText", "FINAL SCORE: 000000", 30, Color.white, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 60f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
-            menuCtrl.victoryHighScoreText = CreateText(victory, "HighScoreText", "HI-SCORE: 000000", 24, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 10f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
-            menuCtrl.victoryPlayAgainButton = CreateUIButton(victory, "PlayAgainButton", "REPLAY SYSTEM", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -90f), new Vector2(280f, 65f), neonCyan);
-            var vicMenuBtn = CreateUIButton(victory, "MenuButton", "MAIN MENU", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -180f), new Vector2(280f, 65f), neonCyan);
+            CreateText(victory, "TitleText", "VICTÒRIA ACONSEGUIDA", 68, neonGreen, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 210f), new Vector2(800f, 120f), TextAnchor.MiddleCenter);
+            CreateText(victory, "SubtitleText", "SISTEMA DEPURAT COMPLETAMENT", 22, neonCyan, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 140f), new Vector2(800f, 50f), TextAnchor.MiddleCenter);
+            menuCtrl.victoryScoreText = CreateText(victory, "ScoreText", "PUNTUACIÓ FINAL: 000000", 30, Color.white, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 60f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
+            menuCtrl.victoryHighScoreText = CreateText(victory, "HighScoreText", "RÈCORD: 000000", 24, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 10f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
+            menuCtrl.victoryPlayAgainButton = CreateUIButton(victory, "PlayAgainButton", "REINICIAR SISTEMA", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -90f), new Vector2(280f, 65f), neonCyan);
+            var vicMenuBtn = CreateUIButton(victory, "MenuButton", "MENÚ PRINCIPAL", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -180f), new Vector2(280f, 65f), neonCyan);
 
             // Connect return menu buttons
             menuCtrl.mainMenuButton = pauseMenuBtn; // Just bind one to satisfy field. Actually we can bind all menu buttons to the callback!

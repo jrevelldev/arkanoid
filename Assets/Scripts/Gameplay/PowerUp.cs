@@ -48,7 +48,7 @@ namespace Arkanoid.Gameplay
                     break;
                 case "Slow":
                     puColor = new Color(1f, 0.6f, 0f); // Neon orange
-                    letter = "S";
+                    letter = "A";
                     break;
                 case "Pierce":
                     puColor = new Color(1f, 0.9f, 0f); // Neon yellow

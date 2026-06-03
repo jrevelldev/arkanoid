@@ -144,7 +144,7 @@ namespace Arkanoid.UI
             if (mainMenuPanel != null) mainMenuPanel.SetActive(true);
             if (mainMenuHighScoreText != null)
             {
-                mainMenuHighScoreText.text = $"HI-SCORE: {highScore:D6}";
+                mainMenuHighScoreText.text = $"RÈCORD: {highScore:D6}";
             }
             SelectButton(playButton);
         }
@@ -160,8 +160,8 @@ namespace Arkanoid.UI
         {
             HideAll();
             if (gameOverPanel != null) gameOverPanel.SetActive(true);
-            if (gameOverScoreText != null) gameOverScoreText.text = $"FINAL SCORE: {score:D6}";
-            if (gameOverHighScoreText != null) gameOverHighScoreText.text = $"HI-SCORE: {highScore:D6}";
+            if (gameOverScoreText != null) gameOverScoreText.text = $"PUNTUACIÓ FINAL: {score:D6}";
+            if (gameOverHighScoreText != null) gameOverHighScoreText.text = $"RÈCORD: {highScore:D6}";
             SelectButton(retryButton);
         }
 
@@ -172,7 +172,7 @@ namespace Arkanoid.UI
             if (levelCompletePanel != null) levelCompletePanel.SetActive(true);
             if (levelCompleteTitleText != null)
             {
-                levelCompleteTitleText.text = $"LEVEL {nextLevelIndex} COMPLETED";
+                levelCompleteTitleText.text = $"NIVELL {nextLevelIndex} SUPERAT";
             }
             SelectButton(nextLevelButton);
         }
@@ -181,8 +181,8 @@ namespace Arkanoid.UI
         {
             HideAll();
             if (victoryPanel != null) victoryPanel.SetActive(true);
-            if (victoryScoreText != null) victoryScoreText.text = $"FINAL SCORE: {score:D6}";
-            if (victoryHighScoreText != null) victoryHighScoreText.text = $"HI-SCORE: {highScore:D6}";
+            if (victoryScoreText != null) victoryScoreText.text = $"PUNTUACIÓ FINAL: {score:D6}";
+            if (victoryHighScoreText != null) victoryHighScoreText.text = $"RÈCORD: {highScore:D6}";
             SelectButton(victoryPlayAgainButton);
         }
 
