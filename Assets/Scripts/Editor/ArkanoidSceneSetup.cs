@@ -362,15 +362,17 @@ namespace Arkanoid.Editor
             menuCtrl.mainMenuPanel = mainMenu;
             CreateText(mainMenu, "TitleText", "NEON FLUX\nARKANOID", 72, neonPink, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 200f), new Vector2(800f, 200f), TextAnchor.MiddleCenter);
             menuCtrl.mainMenuHighScoreText = CreateText(mainMenu, "HighScore", "RÈCORD: 000000", 28, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 50f), new Vector2(600f, 50f), TextAnchor.MiddleCenter);
-            menuCtrl.playButton = CreateUIButton(mainMenu, "PlayButton", "INICIAR PARTIDA", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -80f), new Vector2(280f, 65f), neonCyan);
-            menuCtrl.exitButton = CreateUIButton(mainMenu, "ExitButton", "SORTIR DEL SISTEMA", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -170f), new Vector2(280f, 65f), neonCyan);
+            menuCtrl.playButton = CreateUIButton(mainMenu, "PlayButton", "INICIAR PARTIDA", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -40f), new Vector2(280f, 65f), neonCyan);
+            menuCtrl.mainMenuResolutionButton = CreateUIButton(mainMenu, "ResolutionButton", "RESOLUCIÓ: 1920x1080", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -120f), new Vector2(340f, 65f), neonCyan);
+            menuCtrl.exitButton = CreateUIButton(mainMenu, "ExitButton", "SORTIR DEL SISTEMA", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -200f), new Vector2(280f, 65f), neonCyan);
 
             // --- Pause Panel ---
             GameObject pausePanel = CreateUIPanel("PausePanel", canvasObj.transform, new Color(0.03f, 0.01f, 0.06f, 0.8f));
             menuCtrl.pausePanel = pausePanel;
             CreateText(pausePanel, "TitleText", "SISTEMA EN PAUSA", 60, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 150f), new Vector2(800f, 100f), TextAnchor.MiddleCenter);
-            menuCtrl.resumeButton = CreateUIButton(pausePanel, "ResumeButton", "REPRENDRE", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(280f, 65f), neonCyan);
-            var pauseMenuBtn = CreateUIButton(pausePanel, "MenuButton", "MENÚ PRINCIPAL", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -90f), new Vector2(280f, 65f), neonCyan);
+            menuCtrl.resumeButton = CreateUIButton(pausePanel, "ResumeButton", "REPRENDRE", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 40f), new Vector2(280f, 65f), neonCyan);
+            menuCtrl.pauseResolutionButton = CreateUIButton(pausePanel, "ResolutionButton", "RESOLUCIÓ: 1920x1080", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -40f), new Vector2(340f, 65f), neonCyan);
+            var pauseMenuBtn = CreateUIButton(pausePanel, "MenuButton", "MENÚ PRINCIPAL", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -120f), new Vector2(280f, 65f), neonCyan);
 
             // --- Game Over Panel ---
             GameObject gameOver = CreateUIPanel("GameOverPanel", canvasObj.transform, overlayBg);

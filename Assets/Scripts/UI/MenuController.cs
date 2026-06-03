@@ -36,6 +36,10 @@ namespace Arkanoid.UI
         public Button exitButton;
         public Button mainMenuButton;
 
+        [Header("Resolution Configurations")]
+        public Button mainMenuResolutionButton;
+        public Button pauseResolutionButton;
+
         private int pendingNextLevelIndex = 0;
         private bool isSelecting = false;
         private GameObject lastSelectedObject = null;
@@ -52,6 +56,10 @@ namespace Arkanoid.UI
             if (victoryPlayAgainButton != null) victoryPlayAgainButton.onClick.AddListener(OnPlayPressed);
             if (exitButton != null) exitButton.onClick.AddListener(OnExitPressed);
             if (mainMenuButton != null) mainMenuButton.onClick.AddListener(OnMainMenuPressed);
+            if (mainMenuResolutionButton != null) mainMenuResolutionButton.onClick.AddListener(OnResolutionTogglePressed);
+            if (pauseResolutionButton != null) pauseResolutionButton.onClick.AddListener(OnResolutionTogglePressed);
+
+            UpdateResolutionButtonTexts();
 
             // Register UI click sounds to all buttons in all panels
             RegisterConfirmSound(mainMenuPanel);
@@ -169,6 +177,7 @@ namespace Arkanoid.UI
             {
                 mainMenuHighScoreText.text = $"RÈCORD: {highScore:D6}";
             }
+            UpdateResolutionButtonTexts();
             SelectButton(playButton);
         }
 
@@ -176,6 +185,7 @@ namespace Arkanoid.UI
         {
             HideAll();
             if (pausePanel != null) pausePanel.SetActive(true);
+            UpdateResolutionButtonTexts();
             SelectButton(resumeButton);
         }
 
@@ -237,6 +247,56 @@ namespace Arkanoid.UI
         private void OnMainMenuPressed()
         {
             GameManager.Instance.ShowMainMenu();
+        }
+
+        private void OnResolutionTogglePressed()
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.ToggleResolution();
+                UpdateResolutionButtonTexts();
+            }
+        }
+
+        public void UpdateResolutionButtonTexts()
+        {
+            int savedWidth = PlayerPrefs.GetInt("ResWidth", 1920);
+            int savedHeight = PlayerPrefs.GetInt("ResHeight", 1080);
+            string resText = $"RESOLUCIÓ: {savedWidth}x{savedHeight}";
+            
+            if (mainMenuResolutionButton != null)
+            {
+                Text txt = mainMenuResolutionButton.GetComponentInChildren<Text>();
+                if (txt != null)
+                {
+                    if (lastSelectedObject == mainMenuResolutionButton.gameObject)
+                    {
+                        lastOriginalText = resText;
+                        txt.text = "> " + resText + " <";
+                    }
+                    else
+                    {
+                        txt.text = resText;
+                    }
+                }
+            }
+            
+            if (pauseResolutionButton != null)
+            {
+                Text txt = pauseResolutionButton.GetComponentInChildren<Text>();
+                if (txt != null)
+                {
+                    if (lastSelectedObject == pauseResolutionButton.gameObject)
+                    {
+                        lastOriginalText = resText;
+                        txt.text = "> " + resText + " <";
+                    }
+                    else
+                    {
+                        txt.text = resText;
+                    }
+                }
+            }
         }
     }
 }

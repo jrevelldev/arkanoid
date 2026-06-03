@@ -49,6 +49,7 @@ namespace Arkanoid.Core
             {
                 Instance = this;
                 HighScore = PlayerPrefs.GetInt("HighScore", 0);
+                ApplySavedResolution();
             }
             else
             {
@@ -505,6 +506,42 @@ namespace Arkanoid.Core
             {
                 LevelManager.Instance.ClearBricks();
             }
+        }
+
+        public void ToggleResolution()
+        {
+            int currentSavedWidth = PlayerPrefs.GetInt("ResWidth", 1920);
+
+            // Switch to the other target resolution
+            if (currentSavedWidth == 720)
+            {
+                SetResolution(1920, 1080);
+            }
+            else
+            {
+                SetResolution(720, 576);
+            }
+        }
+
+        public void SetResolution(int width, int height)
+        {
+            Screen.SetResolution(width, height, Screen.fullScreenMode);
+            PlayerPrefs.SetInt("ResWidth", width);
+            PlayerPrefs.SetInt("ResHeight", height);
+            PlayerPrefs.Save();
+            Debug.Log($"Resolution set to: {width}x{height}");
+        }
+
+        private void ApplySavedResolution()
+        {
+            int defaultWidth = 1920;
+            int defaultHeight = 1080;
+            
+            // Set default standalone build preference if not already saved
+            int savedWidth = PlayerPrefs.GetInt("ResWidth", defaultWidth);
+            int savedHeight = PlayerPrefs.GetInt("ResHeight", defaultHeight);
+
+            Screen.SetResolution(savedWidth, savedHeight, Screen.fullScreenMode);
         }
     }
 }
