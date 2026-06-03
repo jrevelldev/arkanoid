@@ -1,0 +1,1014 @@
+fileFormatVersion: 2
+guid: 21f2ad5f5f6bf4ca082f0778165fa93c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3520279341462651246
+    second: tecnoateneu_logo_0
+  - first:
+      213: -269463131102607462
+    second: tecnoateneu_logo_1
+  - first:
+      213: 4528134571205569245
+    second: tecnoateneu_logo_2
+  - first:
+      213: -8428281849351486138
+    second: tecnoateneu_logo_3
+  - first:
+      213: 7801965959488628793
+    second: tecnoateneu_logo_4
+  - first:
+      213: 8718696608580329757
+    second: tecnoateneu_logo_5
+  - first:
+      213: -8784863965900545935
+    second: tecnoateneu_logo_6
+  - first:
+      213: 8574156800744254036
+    second: tecnoateneu_logo_7
+  - first:
+      213: 3551204610910468848
+    second: tecnoateneu_logo_8
+  - first:
+      213: -7854671837913163445
+    second: tecnoateneu_logo_9
+  - first:
+      213: 8326864546979060906
+    second: tecnoateneu_logo_10
+  - first:
+      213: 1980313104124174807
+    second: tecnoateneu_logo_11
+  - first:
+      213: 5523761216948447871
+    second: tecnoateneu_logo_12
+  - first:
+      213: -1767142202085252360
+    second: tecnoateneu_logo_13
+  - first:
+      213: -7566577902570465832
+    second: tecnoateneu_logo_14
+  - first:
+      213: -2552847538375986887
+    second: tecnoateneu_logo_15
+  - first:
+      213: 8404543485426978741
+    second: tecnoateneu_logo_16
+  - first:
+      213: 6778613781705641405
+    second: tecnoateneu_logo_17
+  - first:
+      213: 5965095836224708882
+    second: tecnoateneu_logo_18
+  - first:
+      213: 7017974253727086254
+    second: tecnoateneu_logo_19
+  - first:
+      213: 1137270915491036068
+    second: tecnoateneu_logo_20
+  - first:
+      213: -3940592466884070304
+    second: tecnoateneu_logo_21
+  - first:
+      213: 4501782973014939609
+    second: tecnoateneu_logo_22
+  - first:
+      213: 58850907649177435
+    second: tecnoateneu_logo_23
+  - first:
+      213: -6802969117528828404
+    second: tecnoateneu_logo_24
+  - first:
+      213: 4798205760815063236
+    second: tecnoateneu_logo_25
+  - first:
+      213: -4029106722857305474
+    second: tecnoateneu_logo_26
+  - first:
+      213: -8490463351079837575
+    second: tecnoateneu_logo_27
+  - first:
+      213: -5927325910186337404
+    second: tecnoateneu_logo_28
+  - first:
+      213: 665191138264687842
+    second: tecnoateneu_logo_29
+  - first:
+      213: 3705684610218126620
+    second: tecnoateneu_logo_30
+  - first:
+      213: 8581926272316665987
+    second: tecnoateneu_logo_31
+  - first:
+      213: -6612795099880899463
+    second: tecnoateneu_logo_32
+  - first:
+      213: 1847604239809506026
+    second: tecnoateneu_logo_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tecnoateneu_logo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 453
+        width: 309
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e61070ae86b8ad030800000000000000
+      internalID: 3520279341462651246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_1
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 551
+        width: 269
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97809eb5bca24cf0800000000000000
+      internalID: -269463131102607462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_2
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 402
+        width: 74
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddaafd3c66a27de30800000000000000
+      internalID: 4528134571205569245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_3
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 458
+        width: 278
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645488e105ab80b80800000000000000
+      internalID: -8428281849351486138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_4
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 402
+        width: 64
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938620d14b6264c60800000000000000
+      internalID: 7801965959488628793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_5
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 313
+        width: 334
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1165d23f580ff870800000000000000
+      internalID: 8718696608580329757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 361
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1706e5864c4e51680800000000000000
+      internalID: -8784863965900545935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_7
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 253
+        width: 205
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a6cd4be268df670800000000000000
+      internalID: 8574156800744254036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_8
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 175
+        width: 338
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa3c0e47c9684130800000000000000
+      internalID: 3551204610910468848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_9
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 215
+        width: 161
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b49dbe944999ef290800000000000000
+      internalID: -7854671837913163445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_10
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 78
+        width: 42
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac1b771037fe8370800000000000000
+      internalID: 8326864546979060906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_11
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 77
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d16f5ba64c7b7b10800000000000000
+      internalID: 1980313104124174807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_12
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 77
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7aaa488f8758ac40800000000000000
+      internalID: 5523761216948447871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_13
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 78
+        width: 63
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f26b19a789d977e0800000000000000
+      internalID: -1767142202085252360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_14
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 77
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d597ffac7d1ef690800000000000000
+      internalID: -7566577902570465832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_15
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 77
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9317e5d70b6729cd0800000000000000
+      internalID: -2552847538375986887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_16
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 78
+        width: 38
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfc23455cfe2a470800000000000000
+      internalID: 8404543485426978741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_17
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 77
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbdc120e159721e50800000000000000
+      internalID: 6778613781705641405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_18
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 78
+        width: 64
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 211e5510f0748c250800000000000000
+      internalID: 5965095836224708882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_19
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 77
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea67d34a66ad46160800000000000000
+      internalID: 7017974253727086254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_20
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 77
+        width: 65
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4abf9334fd568cf00800000000000000
+      internalID: 1137270915491036068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_21
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 49
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0647bce87043059c0800000000000000
+      internalID: -3940592466884070304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_22
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 0
+        width: 10
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7157233cb897e30800000000000000
+      internalID: 4501782973014939609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_23
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 0
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b577325b69411d000800000000000000
+      internalID: 58850907649177435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_24
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 0
+        width: 10
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06ddbb91aff691a0800000000000000
+      internalID: -6802969117528828404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_25
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 49
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c06d9ca7b6a69240800000000000000
+      internalID: 4798205760815063236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ab3fd58ccb518c0800000000000000
+      internalID: -4029106722857305474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_27
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 0
+        width: 10
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970e96c0190db2a80800000000000000
+      internalID: -8490463351079837575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_28
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 0
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48bdf5f2d78edbda0800000000000000
+      internalID: -5927325910186337404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_29
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e42100e0db3b3900800000000000000
+      internalID: 665191138264687842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_30
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 0
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1deea9f48c3d6330800000000000000
+      internalID: 3705684610218126620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_31
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 0
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 380f606c970291770800000000000000
+      internalID: 8581926272316665987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_32
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 0
+        width: 10
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97cb72b84e1aa34a0800000000000000
+      internalID: -6612795099880899463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tecnoateneu_logo_33
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 0
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeae95f544204a910800000000000000
+      internalID: 1847604239809506026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tecnoateneu_logo_0: 3520279341462651246
+      tecnoateneu_logo_1: -269463131102607462
+      tecnoateneu_logo_10: 8326864546979060906
+      tecnoateneu_logo_11: 1980313104124174807
+      tecnoateneu_logo_12: 5523761216948447871
+      tecnoateneu_logo_13: -1767142202085252360
+      tecnoateneu_logo_14: -7566577902570465832
+      tecnoateneu_logo_15: -2552847538375986887
+      tecnoateneu_logo_16: 8404543485426978741
+      tecnoateneu_logo_17: 6778613781705641405
+      tecnoateneu_logo_18: 5965095836224708882
+      tecnoateneu_logo_19: 7017974253727086254
+      tecnoateneu_logo_2: 4528134571205569245
+      tecnoateneu_logo_20: 1137270915491036068
+      tecnoateneu_logo_21: -3940592466884070304
+      tecnoateneu_logo_22: 4501782973014939609
+      tecnoateneu_logo_23: 58850907649177435
+      tecnoateneu_logo_24: -6802969117528828404
+      tecnoateneu_logo_25: 4798205760815063236
+      tecnoateneu_logo_26: -4029106722857305474
+      tecnoateneu_logo_27: -8490463351079837575
+      tecnoateneu_logo_28: -5927325910186337404
+      tecnoateneu_logo_29: 665191138264687842
+      tecnoateneu_logo_3: -8428281849351486138
+      tecnoateneu_logo_30: 3705684610218126620
+      tecnoateneu_logo_31: 8581926272316665987
+      tecnoateneu_logo_32: -6612795099880899463
+      tecnoateneu_logo_33: 1847604239809506026
+      tecnoateneu_logo_4: 7801965959488628793
+      tecnoateneu_logo_5: 8718696608580329757
+      tecnoateneu_logo_6: -8784863965900545935
+      tecnoateneu_logo_7: 8574156800744254036
+      tecnoateneu_logo_8: 3551204610910468848
+      tecnoateneu_logo_9: -7854671837913163445
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

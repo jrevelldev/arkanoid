@@ -319,15 +319,15 @@ namespace Arkanoid.Editor
                 #endif
             }
 
-            // HUD Controller Panel
+            // HUD Controller Panel (Now full screen so watermarks anchor properly to bottom edges)
             GameObject hudPanel = new GameObject("HUDPanel");
             hudPanel.transform.SetParent(canvasObj.transform, false);
             var hudRect = hudPanel.AddComponent<RectTransform>();
-            hudRect.anchorMin = new Vector2(0f, 1f);
-            hudRect.anchorMax = new Vector2(1f, 1f);
-            hudRect.pivot = new Vector2(0.5f, 1f);
-            hudRect.anchoredPosition = new Vector2(0f, 0f);
-            hudRect.sizeDelta = new Vector2(0f, 100f);
+            hudRect.anchorMin = Vector2.zero;
+            hudRect.anchorMax = Vector2.one;
+            hudRect.pivot = new Vector2(0.5f, 0.5f);
+            hudRect.anchoredPosition = Vector2.zero;
+            hudRect.sizeDelta = Vector2.zero;
 
             var hudCtrl = hudPanel.AddComponent<HUDController>();
             gameMgr.hudController = hudCtrl;
@@ -336,12 +336,20 @@ namespace Arkanoid.Editor
             Color neonOrange = new Color(1f, 0.6f, 0f);
             Color neonGreen = new Color(0f, 1f, 0.5f);
 
-            hudCtrl.scoreText = CreateText(hudPanel, "ScoreText", "PUNTS: 000000", 30, Color.white, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(50f, 0f), new Vector2(400f, 60f), TextAnchor.MiddleLeft);
-            hudCtrl.highScoreText = CreateText(hudPanel, "HighScoreText", "RÈCORD: 000000", 30, neonOrange, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(450f, 60f), TextAnchor.MiddleCenter);
-            hudCtrl.levelText = CreateText(hudPanel, "LevelText", "NIVELL: 1", 30, neonCyan, new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-400f, 0f), new Vector2(250f, 60f), TextAnchor.MiddleRight);
-            hudCtrl.livesText = CreateText(hudPanel, "LivesText", "VIDES: ▲ ▲ ▲", 30, neonGreen, new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-50f, 0f), new Vector2(300f, 60f), TextAnchor.MiddleRight);
+            hudCtrl.scoreText = CreateText(hudPanel, "ScoreText", "PUNTS: 000000", 30, Color.white, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 0.5f), new Vector2(50f, -50f), new Vector2(400f, 60f), TextAnchor.MiddleLeft);
+            hudCtrl.highScoreText = CreateText(hudPanel, "HighScoreText", "RÈCORD: 000000", 30, neonOrange, new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0.5f, 0.5f), new Vector2(0f, -50f), new Vector2(450f, 60f), TextAnchor.MiddleCenter);
+            hudCtrl.levelText = CreateText(hudPanel, "LevelText", "NIVELL: 1", 30, neonCyan, new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 0.5f), new Vector2(-400f, -50f), new Vector2(250f, 60f), TextAnchor.MiddleRight);
+            hudCtrl.livesText = CreateText(hudPanel, "LivesText", "VIDES: ▲ ▲ ▲", 30, neonGreen, new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 0.5f), new Vector2(-50f, -50f), new Vector2(300f, 60f), TextAnchor.MiddleRight);
             hudCtrl.powerUpText = CreateText(canvasObj, "PowerUpText", "- EXPANSIÓ ACTIVA -", 32, neonPink, new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 50f), new Vector2(800f, 60f), TextAnchor.MiddleCenter);
             hudCtrl.powerUpText.gameObject.SetActive(false);
+
+            // Setup watermark decoration logos on both side corners (placed inside HUD so they hide in Main Menu)
+            Sprite logoSprite = GetLogoSprite();
+            if (logoSprite != null)
+            {
+                CreateUIImage(hudPanel, "LeftDecorLogo", logoSprite, new Vector2(0f, 0f), new Vector2(0f, 0f), new Vector2(0f, 0f), new Vector2(50f, 50f), new Vector2(150f, 100f), new Color(1f, 1f, 1f, 0.25f));
+                CreateUIImage(hudPanel, "RightDecorLogo", logoSprite, new Vector2(1f, 0f), new Vector2(1f, 0f), new Vector2(1f, 0f), new Vector2(-50f, 50f), new Vector2(150f, 100f), new Color(1f, 1f, 1f, 0.25f));
+            }
 
             // Menu Controller
             GameObject menusObj = new GameObject("MenuController");
@@ -365,6 +373,11 @@ namespace Arkanoid.Editor
             menuCtrl.playButton = CreateUIButton(mainMenu, "PlayButton", "INICIAR PARTIDA", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -40f), new Vector2(280f, 65f), neonCyan);
             menuCtrl.mainMenuResolutionButton = CreateUIButton(mainMenu, "ResolutionButton", "RESOLUCIÓ: 1920x1080", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -120f), new Vector2(340f, 65f), neonCyan);
             menuCtrl.exitButton = CreateUIButton(mainMenu, "ExitButton", "SORTIR DEL SISTEMA", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -200f), new Vector2(280f, 65f), neonCyan);
+            
+            if (logoSprite != null)
+            {
+                CreateUIImage(mainMenu, "MainMenuLogo", logoSprite, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -380f), new Vector2(180f, 120f), Color.white);
+            }
 
             // --- Pause Panel ---
             GameObject pausePanel = CreateUIPanel("PausePanel", canvasObj.transform, new Color(0.03f, 0.01f, 0.06f, 0.8f));
@@ -623,6 +636,66 @@ namespace Arkanoid.Editor
                 sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
             }
             return sprite;
+        }
+
+        private static Sprite GetLogoSprite()
+        {
+            string path = "Assets/Settings/tecnoateneu_logo.png";
+            Texture2D tex = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+            if (tex != null)
+            {
+                TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
+                if (importer != null)
+                {
+                    bool needsReimport = false;
+                    if (importer.textureType != TextureImporterType.Sprite)
+                    {
+                        importer.textureType = TextureImporterType.Sprite;
+                        needsReimport = true;
+                    }
+                    if (importer.spriteImportMode != SpriteImportMode.Single)
+                    {
+                        importer.spriteImportMode = SpriteImportMode.Single;
+                        needsReimport = true;
+                    }
+                    if (importer.spriteBorder != Vector4.zero)
+                    {
+                        importer.spriteBorder = Vector4.zero;
+                        needsReimport = true;
+                    }
+                    if (!importer.alphaIsTransparency)
+                    {
+                        importer.alphaIsTransparency = true;
+                        needsReimport = true;
+                    }
+                    
+                    if (needsReimport)
+                    {
+                        importer.SaveAndReimport();
+                    }
+                }
+            }
+            return AssetDatabase.LoadAssetAtPath<Sprite>(path);
+        }
+
+        private static Image CreateUIImage(GameObject parent, string name, Sprite sprite, Vector2 anchorMin, Vector2 anchorMax, Vector2 pivot, Vector2 anchoredPosition, Vector2 sizeDelta, Color color)
+        {
+            GameObject go = new GameObject(name);
+            go.transform.SetParent(parent.transform, false);
+
+            var rect = go.AddComponent<RectTransform>();
+            rect.anchorMin = anchorMin;
+            rect.anchorMax = anchorMax;
+            rect.pivot = pivot;
+            rect.anchoredPosition = anchoredPosition;
+            rect.sizeDelta = sizeDelta;
+
+            var img = go.AddComponent<Image>();
+            img.sprite = sprite;
+            img.color = color;
+            img.preserveAspect = true;
+            
+            return img;
         }
     }
 }
