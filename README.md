@@ -26,6 +26,27 @@ To play the game:
 
 ---
 
+## 🤫 Cheat Codes (Dev Mode)
+During gameplay, hold the **`C`** key and press one of the following keys to trigger developer cheats:
+
+### ⏭️ Level Skipping
+* **`C` + `1`**: Skip to Level 1
+* **`C` + `2`**: Skip to Level 2
+* **`C` + `3`**: Skip to Level 3
+* **`C` + `4`**: Skip to Level 4
+*(If additional levels are added, they can be skipped to using `C` + `5` through `C` + `9`)*
+
+### ⚡ Instant Power-ups
+* **`C` + `Q`**: **Expand** (paddle width expands)
+* **`C` + `W`**: **Laser** (paddle can shoot laser beams)
+* **`C` + `E`**: **Catch** (balls stick to paddle)
+* **`C` + `R`**: **Slow** (slows down balls)
+* **`C` + `T`**: **Pierce** (balls pierce through bricks)
+* **`C` + `Y`**: **Triple** (splits balls into three)
+* **`C` + `U`**: **Life** (grants an extra life)
+
+---
+
 ## 🌟 Key Features & Tech Stack
 
 * **Procedural Synth Audio**: Sound effects (bounces, hits, powerups, lasers, deaths, wins) are mathematically synthesized on-the-fly in C# using wave formulas (sine, square, frequency sweeps). **No external audio files required!**

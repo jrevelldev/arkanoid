@@ -65,6 +65,8 @@ namespace Arkanoid.Core
         {
             if (currentState == GameState.Playing)
             {
+                HandleCheats();
+
 #if ENABLE_INPUT_SYSTEM
                 bool pausePressed = (UnityEngine.InputSystem.Keyboard.current != null && 
                                     (UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame || 
@@ -84,6 +86,80 @@ namespace Arkanoid.Core
                     {
                         DeactivatePowerUp();
                     }
+                }
+            }
+        }
+
+        private void HandleCheats()
+        {
+            bool cHeld = false;
+#if ENABLE_INPUT_SYSTEM
+            var kb = UnityEngine.InputSystem.Keyboard.current;
+            cHeld = kb != null && kb.cKey.isPressed;
+#else
+            cHeld = Input.GetKey(KeyCode.C);
+#endif
+
+            if (cHeld)
+            {
+                int targetLevel = -1;
+#if ENABLE_INPUT_SYSTEM
+                if (kb != null)
+                {
+                    if (kb.digit1Key.wasPressedThisFrame) targetLevel = 0;
+                    else if (kb.digit2Key.wasPressedThisFrame) targetLevel = 1;
+                    else if (kb.digit3Key.wasPressedThisFrame) targetLevel = 2;
+                    else if (kb.digit4Key.wasPressedThisFrame) targetLevel = 3;
+                    else if (kb.digit5Key.wasPressedThisFrame) targetLevel = 4;
+                    else if (kb.digit6Key.wasPressedThisFrame) targetLevel = 5;
+                    else if (kb.digit7Key.wasPressedThisFrame) targetLevel = 6;
+                    else if (kb.digit8Key.wasPressedThisFrame) targetLevel = 7;
+                    else if (kb.digit9Key.wasPressedThisFrame) targetLevel = 8;
+                }
+#else
+                if (Input.GetKeyDown(KeyCode.Alpha1)) targetLevel = 0;
+                else if (Input.GetKeyDown(KeyCode.Alpha2)) targetLevel = 1;
+                else if (Input.GetKeyDown(KeyCode.Alpha3)) targetLevel = 2;
+                else if (Input.GetKeyDown(KeyCode.Alpha4)) targetLevel = 3;
+                else if (Input.GetKeyDown(KeyCode.Alpha5)) targetLevel = 4;
+                else if (Input.GetKeyDown(KeyCode.Alpha6)) targetLevel = 5;
+                else if (Input.GetKeyDown(KeyCode.Alpha7)) targetLevel = 6;
+                else if (Input.GetKeyDown(KeyCode.Alpha8)) targetLevel = 7;
+                else if (Input.GetKeyDown(KeyCode.Alpha9)) targetLevel = 8;
+#endif
+
+                if (targetLevel != -1 && LevelManager.Instance != null && targetLevel < LevelManager.Instance.TotalLevels)
+                {
+                    CurrentLevel = targetLevel;
+                    LoadLevel(targetLevel);
+                    return;
+                }
+
+                string targetPowerUp = null;
+#if ENABLE_INPUT_SYSTEM
+                if (kb != null)
+                {
+                    if (kb.qKey.wasPressedThisFrame) targetPowerUp = "Expand";
+                    else if (kb.wKey.wasPressedThisFrame) targetPowerUp = "Laser";
+                    else if (kb.eKey.wasPressedThisFrame) targetPowerUp = "Catch";
+                    else if (kb.rKey.wasPressedThisFrame) targetPowerUp = "Slow";
+                    else if (kb.tKey.wasPressedThisFrame) targetPowerUp = "Pierce";
+                    else if (kb.yKey.wasPressedThisFrame) targetPowerUp = "Triple";
+                    else if (kb.uKey.wasPressedThisFrame) targetPowerUp = "Life";
+                }
+#else
+                if (Input.GetKeyDown(KeyCode.Q)) targetPowerUp = "Expand";
+                else if (Input.GetKeyDown(KeyCode.W)) targetPowerUp = "Laser";
+                else if (Input.GetKeyDown(KeyCode.E)) targetPowerUp = "Catch";
+                else if (Input.GetKeyDown(KeyCode.R)) targetPowerUp = "Slow";
+                else if (Input.GetKeyDown(KeyCode.T)) targetPowerUp = "Pierce";
+                else if (Input.GetKeyDown(KeyCode.Y)) targetPowerUp = "Triple";
+                else if (Input.GetKeyDown(KeyCode.U)) targetPowerUp = "Life";
+#endif
+
+                if (targetPowerUp != null)
+                {
+                    ActivatePowerUp(targetPowerUp);
                 }
             }
         }
