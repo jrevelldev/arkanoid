@@ -153,3 +153,32 @@ The level layout is a grid of **12 columns**. Use the following character mappin
             }
 ```
 4. Save the script. The game will automatically load the new level after completing Level 4. The UI level indicator and victory logic will scale dynamically!
+
+---
+
+## 🏷️ Release History
+
+### 🟢 `v1.0.0` — Initial Base Release (June 3, 2026)
+This release establishes the core game loop, developer cheats, procedural audio synth engine, neon graphics pipeline, and keyboard menu navigation.
+
+#### 🖥️ Screen & Display Configuration
+* **Reference Resolution**: `1920 × 1080` (16:9 Landscape Aspect Ratio).
+* **Standalone Build Settings**: Default width: `1920`, Default height: `1080` (Native Fullscreen enabled).
+* **WebGL Build Settings**: Width: `960`, Height: `600`.
+* **UI Scaling Model**: `Scale With Screen Size` (Reference Resolution: `1920x1080`, Match: `0.5` width/height balance).
+* **Playfield Boundaries (Unity World Space)**:
+  * **Left Border**: `x = -6.1`
+  * **Right Border**: `x = 6.1`
+  * **Top Border**: `y = 8.4`
+  * **Bottom Death Zone**: `y = -8.6`
+  * **Camera Setup**: Main Camera is positioned at `(0, 0, -10)` with **Orthographic Projection** and **Orthographic Size = `8.5`**.
+  * *Note: The playable grid is centered at `(0,0)`, giving a world viewport of `12.2` units wide by `17.0` units high (aspect ratio ≈ `0.718` vertical format).*
+
+#### ⚙️ Feature Summary
+* **Classic Game Loop**: Main Menu, Gameplay Scene, Pause Menu, Stage Transitions, Game Over screen, and Victory screen.
+* **Level Progression**: Four pre-configured brick matrix levels, generated dynamically via ASCII strings.
+* **Keyboard UI Navigation**: Fully operational keyboard-focused navigation for UI buttons using **Up/Down Arrow Keys** and **Space/Enter** to select, with neon hover highlights.
+* **Developer Cheat System**: Dev tools enabled during gameplay. Holding `C` allows skipped levels (`1`–`4`) and instant power-up injections (`Q`/`W`/`E`/`R`/`T`/`Y`/`U`).
+* **Procedural Sound Engine**: High-fidelity sound effects generated programmatically in real-time. Synthesizes wave sound envelopes for bounces, brick hits, laser firing, powerups, wins, and deaths.
+* **Neon Synthwave Graphics**: Retro scrolling GL vector line background grid, dynamic particle burst on breakable bricks, trailing ball effects, and URP Bloom/Vignette post-processing volume configuration.
+
