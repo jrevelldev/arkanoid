@@ -15,14 +15,14 @@ MonoBehaviour:
   levelName: Level 3
   rows: 6
   columns: 12
-  asciiLayout: 'SSSSSSSSSSSS
+  asciiLayout: '............
 
-    SRRS.G.SBTBS
+    RRR..G..B.B.
 
-    S.RSG.GSBTBS
+    .R.SG.GSB.B.
 
-    S.RSGGGS.B.S
+    .R.SGGGS.B..
 
-    S.RSG.GS.B.S
+    .R..G.G..B..
 
-    SSSSSSSSSSSS'
+    ............'

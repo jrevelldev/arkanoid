@@ -15,11 +15,11 @@ MonoBehaviour:
   levelName: Level 4
   rows: 8
   columns: 12
-  asciiLayout: '....R....R..
+  asciiLayout: '...R....R...
 
-    .....R..R...
+    ....R..R....
 
-    ....RRRRRR..
+    ....RRRR....
 
     ..RR.RR.RR.R
 

@@ -178,6 +178,84 @@ namespace Arkanoid.Editor
             var levelMgr = managersObj.AddComponent<LevelManager>();
             levelMgr.brickPrefab = brickComp;
 
+            // Ensure Levels directory exists
+            if (!Directory.Exists("Assets/Levels"))
+            {
+                Directory.CreateDirectory("Assets/Levels");
+                AssetDatabase.Refresh();
+            }
+
+            // Create default levels as assets and link them to LevelManager
+            var defaultLayouts = new string[][]
+            {
+                new string[]
+                {
+                    "............",
+                    "....RRRR....",
+                    "..OOOOOOOO..",
+                    "GGGGGGGGGGGG",
+                    "YYYYYYYYYYYY",
+                    "BBBBBBBBBBBB"
+                },
+                new string[]
+                {
+                    "S..S....S..S",
+                    "S.R.O..O.R.S",
+                    "S.O.Y..Y.O.S",
+                    "..Y.G..G.Y..",
+                    "..G.B..B.G..",
+                    "S..S....S..S"
+                },
+                new string[]
+                {
+                    "SSSSSSSSSSSS",
+                    "SRRS.G.SBTBS",
+                    "S.RSG.GSBTBS",
+                    "S.RSGGGS.B.S",
+                    "S.RSG.GS.B.S",
+                    "SSSSSSSSSSSS"
+                },
+                new string[]
+                {
+                    "....R....R..",
+                    ".....R..R...",
+                    "....RRRRRR..",
+                    "..RR.RR.RR.R",
+                    "RRRRRRRRRRRR",
+                    "R.R.RRRR.R.R",
+                    "R...R..R...R",
+                    "....R..R...."
+                }
+            };
+
+            levelMgr.levels = new System.Collections.Generic.List<ArkanoidLevel>();
+            for (int i = 0; i < defaultLayouts.Length; i++)
+            {
+                string path = $"Assets/Levels/Level_{i + 1}.asset";
+                ArkanoidLevel levelAsset = AssetDatabase.LoadAssetAtPath<ArkanoidLevel>(path);
+                if (levelAsset == null)
+                {
+                    levelAsset = ScriptableObject.CreateInstance<ArkanoidLevel>();
+                    levelAsset.levelName = $"Level {i + 1}";
+                    
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                    string[] rows = defaultLayouts[i];
+                    for (int r = 0; r < rows.Length; r++)
+                    {
+                        sb.Append(rows[r]);
+                        if (r < rows.Length - 1) sb.Append("\n");
+                    }
+                    levelAsset.asciiLayout = sb.ToString();
+                    levelAsset.rows = rows.Length;
+                    levelAsset.columns = rows[0].Length;
+
+                    AssetDatabase.CreateAsset(levelAsset, path);
+                }
+                levelMgr.levels.Add(levelAsset);
+            }
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
             var effectsMgr = managersObj.AddComponent<EffectsManager>();
             
             var gameMgr = managersObj.AddComponent<GameManager>();

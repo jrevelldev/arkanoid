@@ -20,9 +20,12 @@ namespace Arkanoid.Core
 
         private List<Brick> spawnedBricks = new List<Brick>();
 
-        // 4 Levels defined as ASCII grids.
+        [Header("Levels")]
+        public List<ArkanoidLevel> levels = new List<ArkanoidLevel>();
+
+        // 4 default levels defined as ASCII grids as fallback.
         // Columns = 12, Rows = 8.
-        private readonly string[][] levels = new string[][]
+        private readonly string[][] defaultLevels = new string[][]
         {
             // Level 1: Simple rows
             new string[]
@@ -44,14 +47,14 @@ namespace Arkanoid.Core
                 "..G.B..B.G..",
                 "S..S....S..S"
             },
-            // Level 3: The tunnel maze with steel borders
+            // Level 3: TAV layout with steel dividers
             new string[]
             {
                 "SSSSSSSSSSSS",
-                "S...RRRR...S",
-                "SO.S....S.OS",
-                "SG.S.GG.S.GS",
-                "SY.S....S.YS",
+                "SRRS.G.SBTBS",
+                "S.RSG.GSBTBS",
+                "S.RSGGGS.B.S",
+                "S.RSG.GS.B.S",
                 "SSSSSSSSSSSS"
             },
             // Level 4: Space Invader pattern
@@ -68,7 +71,7 @@ namespace Arkanoid.Core
             }
         };
 
-        public int TotalLevels => levels.Length;
+        public int TotalLevels => (levels != null && levels.Count > 0) ? levels.Count : defaultLevels.Length;
 
         private void Awake()
         {
@@ -86,15 +89,27 @@ namespace Arkanoid.Core
         {
             ClearBricks();
 
-            if (levelIndex < 0 || levelIndex >= levels.Length)
+            int total = TotalLevels;
+            if (levelIndex < 0 || levelIndex >= total)
             {
                 Debug.LogError($"Level index {levelIndex} out of bounds!");
                 return;
             }
 
-            string[] layout = levels[levelIndex];
+            string[] layout;
+            if (levels != null && levels.Count > 0)
+            {
+                layout = levels[levelIndex].GetLayoutLines();
+            }
+            else
+            {
+                layout = defaultLevels[levelIndex];
+            }
+
             int rows = layout.Length;
-            int cols = layout[0].Length;
+            int cols = rows > 0 ? layout[0].Length : 0;
+
+            if (cols == 0) return;
 
             // Compute total grid width to center bricks horizontally
             float totalWidth = cols * brickWidth + (cols - 1) * spacingX;
@@ -103,7 +118,8 @@ namespace Arkanoid.Core
             for (int r = 0; r < rows; r++)
             {
                 string rowText = layout[r];
-                for (int c = 0; c < cols; c++)
+                int colCount = Mathf.Min(cols, rowText.Length);
+                for (int c = 0; c < colCount; c++)
                 {
                     char brickChar = rowText[c];
                     if (brickChar == '.') continue;
