@@ -79,9 +79,10 @@ namespace Arkanoid.Gameplay
                 // Launch if player presses launch buttons and state is Playing
 #if ENABLE_INPUT_SYSTEM
                 bool launchPressed = (UnityEngine.InputSystem.Keyboard.current != null && UnityEngine.InputSystem.Keyboard.current.spaceKey.wasPressedThisFrame) || 
-                                     (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame);
+                                     (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame) ||
+                                     (UnityEngine.InputSystem.Gamepad.current != null && (UnityEngine.InputSystem.Gamepad.current.buttonSouth.wasPressedThisFrame || UnityEngine.InputSystem.Gamepad.current.buttonWest.wasPressedThisFrame));
 #else
-                bool launchPressed = Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0);
+                bool launchPressed = Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.JoystickButton2);
 #endif
                 if (GameManager.Instance.CurrentState == GameState.Playing && launchPressed)
                 {
@@ -203,9 +204,10 @@ namespace Arkanoid.Gameplay
                 // If paddle is in Catch Mode, capture the ball
 #if ENABLE_INPUT_SYSTEM
                 bool isReleaseHeld = (UnityEngine.InputSystem.Keyboard.current != null && UnityEngine.InputSystem.Keyboard.current.spaceKey.isPressed) || 
-                                     (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.isPressed);
+                                     (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.isPressed) ||
+                                     (UnityEngine.InputSystem.Gamepad.current != null && (UnityEngine.InputSystem.Gamepad.current.buttonSouth.isPressed || UnityEngine.InputSystem.Gamepad.current.buttonWest.isPressed));
 #else
-                bool isReleaseHeld = Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0);
+                bool isReleaseHeld = Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0) || Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.JoystickButton2);
 #endif
                 if (isReleaseHeld)
                 {

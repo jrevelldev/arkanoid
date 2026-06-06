@@ -74,9 +74,10 @@ namespace Arkanoid.Core
 #if ENABLE_INPUT_SYSTEM
                 bool pausePressed = (UnityEngine.InputSystem.Keyboard.current != null && 
                                     (UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame || 
-                                     UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame));
+                                     UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)) ||
+                                    (UnityEngine.InputSystem.Gamepad.current != null && UnityEngine.InputSystem.Gamepad.current.startButton.wasPressedThisFrame);
 #else
-                bool pausePressed = Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P);
+                bool pausePressed = Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7);
 #endif
                 if (pausePressed)
                 {

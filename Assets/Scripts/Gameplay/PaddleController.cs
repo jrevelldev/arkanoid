@@ -79,7 +79,7 @@ namespace Arkanoid.Gameplay
         {
             float targetX = transform.position.x;
             
-            // 1. Check Keyboard Input
+            // 1. Check Keyboard/Gamepad Input
             float moveInput = 0f;
 #if ENABLE_INPUT_SYSTEM
             var keyboard = UnityEngine.InputSystem.Keyboard.current;
@@ -87,6 +87,21 @@ namespace Arkanoid.Gameplay
             {
                 if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) moveInput = -1f;
                 else if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) moveInput = 1f;
+            }
+
+            var gamepad = UnityEngine.InputSystem.Gamepad.current;
+            if (gamepad != null)
+            {
+                float stickInput = gamepad.leftStick.x.ReadValue();
+                float dpadInput = 0f;
+                if (gamepad.dpad.left.isPressed) dpadInput = -1f;
+                else if (gamepad.dpad.right.isPressed) dpadInput = 1f;
+
+                float gamepadMove = Mathf.Abs(stickInput) > Mathf.Abs(dpadInput) ? stickInput : dpadInput;
+                if (Mathf.Abs(gamepadMove) > 0.05f) // Deadzone check
+                {
+                    moveInput = gamepadMove;
+                }
             }
 #else
             moveInput = Input.GetAxisRaw("Horizontal");
@@ -139,9 +154,10 @@ namespace Arkanoid.Gameplay
             // Fire lasers or release balls
 #if ENABLE_INPUT_SYSTEM
             bool actionTriggered = (UnityEngine.InputSystem.Keyboard.current != null && UnityEngine.InputSystem.Keyboard.current.spaceKey.wasPressedThisFrame) || 
-                                   (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame);
+                                   (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame) ||
+                                   (UnityEngine.InputSystem.Gamepad.current != null && (UnityEngine.InputSystem.Gamepad.current.buttonSouth.wasPressedThisFrame || UnityEngine.InputSystem.Gamepad.current.buttonWest.wasPressedThisFrame));
 #else
-            bool actionTriggered = Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0);
+            bool actionTriggered = Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.JoystickButton2);
 #endif
             if (actionTriggered)
             {
