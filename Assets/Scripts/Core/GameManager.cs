@@ -72,10 +72,20 @@ namespace Arkanoid.Core
                 HandleCheats();
 
 #if ENABLE_INPUT_SYSTEM
+                bool gamepadPause = false;
+                foreach (var g in UnityEngine.InputSystem.Gamepad.all)
+                {
+                    if (g.startButton.wasPressedThisFrame)
+                    {
+                        gamepadPause = true;
+                        break;
+                    }
+                }
+
                 bool pausePressed = (UnityEngine.InputSystem.Keyboard.current != null && 
                                     (UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame || 
                                      UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)) ||
-                                    (UnityEngine.InputSystem.Gamepad.current != null && UnityEngine.InputSystem.Gamepad.current.startButton.wasPressedThisFrame);
+                                    gamepadPause;
 #else
                 bool pausePressed = Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7);
 #endif

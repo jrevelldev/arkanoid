@@ -78,9 +78,31 @@ namespace Arkanoid.Gameplay
 
                 // Launch if player presses launch buttons and state is Playing
 #if ENABLE_INPUT_SYSTEM
+                bool gamepadAction = false;
+                foreach (var g in UnityEngine.InputSystem.Gamepad.all)
+                {
+                    if (g.buttonSouth.wasPressedThisFrame || g.buttonWest.wasPressedThisFrame)
+                    {
+                        gamepadAction = true;
+                        break;
+                    }
+                }
+
+                if (!gamepadAction)
+                {
+                    foreach (var j in UnityEngine.InputSystem.Joystick.all)
+                    {
+                        if (j.trigger.wasPressedThisFrame)
+                        {
+                            gamepadAction = true;
+                            break;
+                        }
+                    }
+                }
+
                 bool launchPressed = (UnityEngine.InputSystem.Keyboard.current != null && UnityEngine.InputSystem.Keyboard.current.spaceKey.wasPressedThisFrame) || 
                                      (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame) ||
-                                     (UnityEngine.InputSystem.Gamepad.current != null && (UnityEngine.InputSystem.Gamepad.current.buttonSouth.wasPressedThisFrame || UnityEngine.InputSystem.Gamepad.current.buttonWest.wasPressedThisFrame));
+                                     gamepadAction;
 #else
                 bool launchPressed = Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.JoystickButton2);
 #endif
@@ -203,9 +225,31 @@ namespace Arkanoid.Gameplay
 
                 // If paddle is in Catch Mode, capture the ball
 #if ENABLE_INPUT_SYSTEM
+                bool gamepadHeld = false;
+                foreach (var g in UnityEngine.InputSystem.Gamepad.all)
+                {
+                    if (g.buttonSouth.isPressed || g.buttonWest.isPressed)
+                    {
+                        gamepadHeld = true;
+                        break;
+                    }
+                }
+
+                if (!gamepadHeld)
+                {
+                    foreach (var j in UnityEngine.InputSystem.Joystick.all)
+                    {
+                        if (j.trigger.isPressed)
+                        {
+                            gamepadHeld = true;
+                            break;
+                        }
+                    }
+                }
+
                 bool isReleaseHeld = (UnityEngine.InputSystem.Keyboard.current != null && UnityEngine.InputSystem.Keyboard.current.spaceKey.isPressed) || 
                                      (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.isPressed) ||
-                                     (UnityEngine.InputSystem.Gamepad.current != null && (UnityEngine.InputSystem.Gamepad.current.buttonSouth.isPressed || UnityEngine.InputSystem.Gamepad.current.buttonWest.isPressed));
+                                     gamepadHeld;
 #else
                 bool isReleaseHeld = Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0) || Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.JoystickButton2);
 #endif
